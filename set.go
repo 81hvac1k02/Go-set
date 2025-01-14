@@ -69,6 +69,15 @@ func (s Set[T]) Map(values []T) {
 	}
 }
 
+// NewSet creates a new set and initializes it with the provided values.
+func NewSet[T comparable](values ...T) Set[T] {
+	s := make(Set[T])
+	for _, value := range values {
+		s.Add(value)
+	}
+	return s
+}
+
 // Remove an element from the set
 func (s Set[T]) Remove(value T) {
 	delete(s, value)

@@ -60,4 +60,9 @@ func TestSet(t *testing.T) {
     if personSet.Size() != 0 {
         t.Errorf("Expected set to be empty")
     }
+    // Test creating a new set with values 
+    testingSet := NewSet("Testing", "Set", "with", "values")
+    if testingSet.Size() != 4 {
+        t.Errorf("Expected set to contain 4 values")
+    }
 }
